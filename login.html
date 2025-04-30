@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshikshya - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background:white;
+            min-height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+     
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            color: #1a73e8;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #5f6368;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #5f6368;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #dadce0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: #5f6368;
+        }
+
+        .forgot-password {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1557b0;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 2rem;
+            color: #5f6368;
+        }
+
+        .signup-link a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 0.8rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+        .facebook-icon {
+            background: #3b5998;
+        }
+
+        .google-icon {
+            background: #dd4b39;
+        }
+
+        .github-icon {
+            background: #333;
+        }
+
+        .social-icon i {
+            color: white;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:white;
+            min-height: 40vh;
+        }
+
+        .login-container {
+            position: relative;
+            width: 100%;
+            height: 90%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            max-width: 330px;
+        }
+
+     
+    .some-selector {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+        @media (max-height: 600px) {
+            .login-container {
+                padding: 1.5rem;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Please login to access your account</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            Invalid username or password
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+        <div class="options">
+            <label class="remember-me">
+                Remember Me
+                <input type="checkbox">
+            </label>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div class="social-login">
+            <div class="social-icons">
+                <div class="social-icon facebook-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-icon google-icon">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="social-icon github-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up here</a>
+        </div>
+
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script>
+        const form = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (!email || !password) {
+                errorMessage.textContent = 'Please fill in all fields';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Add your actual login logic here
+            // For demo purposes, always show error
+            errorMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

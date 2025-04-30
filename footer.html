@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    
+    <style>
+        /* General Footer Styling */
+        .footer {
+            background-color:white; /* Elegant dark theme */
+            color: #000000;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border-top: 1px solid #000000;
+            border-bottom: #000000 solid 1px;
+            
+        }
+
+        /* Footer Container */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        /* Footer Sections */
+        .footer-text {
+            flex: 1;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        /* Social Media Icons */
+        .footer-social {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .footer-social a {
+            text-decoration: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .footer-social img {
+            width: 28px;
+            filter: brightness(0) invert(1); /* Makes icons white */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .footer-social a:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Copyright & Branding */
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #0a0a0a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Copyright Information -->
+            <div class="footer-text">
+                <p>&copy; 2023 Eskishya. All rights reserved.</p>
+            </div>
+
+            <!-- Social Media Links with Logos -->
+            <div class="footer-social">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>Designed with ❤️ by Eskishya Team</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+Subscribe 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskishya - Online Bookstore</title>
+    <style>
+        /* General Styling */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: white;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Content Section */
+        .content {
+            text-align: center;
+            padding: 40px;
+        }
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            text-align: center;
+            margin: 20px auto;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #searchButton {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #searchButton:hover {
+            background-color: #218838;
+        }
+
+        /* Featured Books */
+        .book-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .book {
+            width: 200px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .book img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .book-title {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        /* Subscription Form */
+        .subscribe {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .subscribe input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .subscribe button:hover {
+            background-color: #e0a800;
+        }
+    .top {
+        width: vw;
+    
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        
+    }
+
+    .top img {
+        width: 100%;
+        height: 150px; 
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin-top:none;
+        border-radius: 6px;
+    }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 28px;
+            }
+            .book-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class=top>
+    <img src="Assest/bg.jpg" alt="bg image">
+</div>
+    <div class="content">
+        
+        <h1>Welcome to Eskishya</h1>
+        <p>Your one-stop solution for all your book needs.</p>
+        <p>Explore our extensive catalogue of books across various genres.</p>
+        <a href="catalogue.html" class="button">View Catalogue</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search for books..." id="searchInput">
+        <button id="searchButton">Search</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+
+    <!-- Featured Books Section -->
+    <div class="book-section">
+        <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <p class="book-title">Book Title 1</p>
+        </div>
+        <div class="book">
+            <img src="book2.jpg" alt="Book 2">
+            <p class="book-title">Book Title 2</p>
+        </div>
+        <div class="book">
+            <img src="book3.jpg" alt="Book 3">
+            <p class="book-title">Book Title 3</p>
+        </div>
+    </div>
+
+    <!-- Subscription Form -->
+    <div class="subscribe">
+        <p>Subscribe to get updates on new arrivals and bestsellers!</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+
+    <!-- JavaScript for Search -->
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value;
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = `<p>Searching for "${query}"...</p>`;
+        });
+    </script>
+</body>
+</html>
